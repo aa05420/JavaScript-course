@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercises 11
+    </title>
+  </head>
+  <body>
+    <script>
+      //const nums = [10,20,30];
+      const nums = ['hi','hello','good']
+      //nums[2] = 99;
+      console.log(nums);
+      console.log(getLastValue(nums));
+
+      console.log(arraySwap(nums));
+
+      function getLastValue(array){
+        value = array[array.length-1];
+        return value;
+      }
+
+      function arraySwap(array){
+        valuefirst = array[0];
+        valueLast = array[array.length -1];
+        array[0] = valueLast;
+        array[array.length-1] = valuefirst;
+        return array;
+      }
+
+      for (let i = 5; i!==0; i-- ){
+        console.log(i);
+      }
+
+      let newArray = [];
+      array = [-1,2,3,4];
+      let count = 0;
+      for (let i= 0; i<array.length; i++){
+        if (array[i]>0){
+          count++;
+        }
+
+      }
+      console.log(count)
+
+      words = ['apple','apple','banana','chair']
+      function countWords(words){
+        let dict = {};
+        for(let i= 0; i<array.length; i++){
+          let key = words[i];
+          if (!(dict[key])){
+            dict[key] = 1;
+          }
+          else{
+            dict[key]++;
+          }
+        }
+        return dict;
+      }
+
+      console.log(countWords(words));
+    </script>
+  </body>
+</html>

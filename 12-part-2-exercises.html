@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Lesson 12 Exercises - Advanced Functions
+    </title>
+  </head>
+  <body>
+    <script>
+      const arrowFunction = ((a,b) =>a*b);
+      
+      console.log(arrowFunction(2,3));
+
+      function countPositive(nums){
+        let count = 0;
+        nums.forEach((value)=>{
+          console.log(value);
+          if (value>0){
+            count++;
+          }}
+        )
+        return count;
+      }
+
+      //12l
+      let nums = [4,-2,-1,4];
+      console.log(countPositive(nums));
+
+      //12m 
+      function addNum(array,num){
+        return array.map((value) => value + num);
+      }
+      console.log(addNum([1,3,4],2));
+
+      //12n updates 12o
+      function removeEggs(foods){
+        let count = 0;
+        return foods.filter((food) => {
+          if(food==='eggs' && count!==2){
+            count ++;
+            return false;
+          }
+          else{
+            return true;
+          }
+        });
+      };
+      
+      console.log(removeEggs(['eggs','ham','apple','eggs','eggs']));
+    
+    </script>
+  </body>
+</html>

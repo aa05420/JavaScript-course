@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Calculator 9j
+    </title>
+    
+  </head>
+  <body>
+    
+    <p>
+      <button onclick="Computation('1');
+      displayCalculation();"
+      >
+        1
+        
+      </button>
+      <button onclick="Computation('2');
+      displayCalculation()";>
+        2
+      </button>
+      <button onclick="Computation('3');
+      displayCalculation()";>
+        3
+      </button>
+      <button onclick="Computation('+');
+      displayCalculation()";> 
+        +
+      </button>
+      
+    </p>
+    <p>
+      <button onclick="Computation('4');
+      displayCalculation()";>
+        4
+      </button>
+      <button onclick="Computation('5');
+      displayCalculation()";>
+        5
+      </button>
+      <button onclick="Computation('6');
+      displayCalculation()";>
+        6
+      </button>
+      <button onclick="Computation('-');
+      displayCalculation()";>
+        -
+      </button>
+    </p>
+    <p>
+      <button onclick="Computation('7');
+      displayCalculation()";>
+        7
+      </button>
+      <button onclick="Computation('8');
+      displayCalculation()";>
+        8
+      </button>
+      <button onclick="Computation('9');
+      displayCalculation()";>
+        9
+      </button>
+      <button onclick="Computation('*');
+      displayCalculation()";>
+        *
+      </button>
+    </p>
+
+    <p>
+      <button 
+        onclick="Computation('0');
+        displayCalculation()";>
+        0
+      </button>
+      <button onclick="Computation('.');
+      displayCalculation()";>
+        .
+      </button>
+      <button onclick="calculation=eval(calculation);
+      console.log(calculation)
+      localStorage.setItem('calculation', JSON.stringify(calculation));
+      ;
+      displayCalculation()";>
+        =
+      
+      </button>
+      <button onclick="Computation('/')";>
+        /
+      </button>
+    </p>
+    <p>
+      <button onclick="calculation = '';;
+      displayCalculation();
+      console.log(calculation);
+      ">Clear</button>
+    </p>
+
+    <p class="js-output-result";
+    >
+    
+    </p>
+    <script>
+      function Computation(value){
+        calculation = calculation + value;
+        console.log(calculation);
+        return calculation;
+      }
+      
+      function displayCalculation(){
+        document.querySelector('.js-output-result').innerHTML = calculation;
+      }
+     
+      let calculation =JSON.parse(localStorage.getItem('calculation'))||'';
+
+      displayCalculation();
+
+      
+    </script>
+  </body>
+</html>

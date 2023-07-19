@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title class="js-title">
+      App
+    </title>
+  </head>
+  <body>
+    <button class="finished" onclick = "
+      buttontext();
+      "> Finish</button>
+
+    <button class="add-to-cart" onclick="
+      clickAddtoCart();
+    ">Add to Cart</button>
+    <p class="js-display-added"> </p>
+    
+    <button class="add" onclick="messages++">Add</button>
+    <button class="remove" onclick="messages--">Remove</button>
+    <script>
+      let add = function (){
+        console.log(2+3)
+      };
+      
+      function runTwice(fun){
+        for (let i = 0; i<2; i++){
+          fun();
+        }
+      }
+      
+      runTwice(function (){
+        console.log(6)
+        console.log(8)
+      })
+      
+    function buttontext(){ 
+      const buttonElement = document.querySelector('.finished');
+      buttonElement.innerHTML = "loading";
+      setTimeout(function () {
+        buttonElement.innerHTML = "finished!";
+      },1000);
+      
+    }
+    
+    function clickAddtoCart(){
+      const AddedMessage = document.querySelector('.js-display-added');
+      AddedMessage.innerHTML = "Added";
+      clearTimeout();
+      setTimeout(function(){
+        AddedMessage.innerHTML = '';
+      },2000);
+    }      
+    let messages = 2;
+    setInterval(function(){
+      const title = document.querySelector('.js-title');
+      if (title.innerHTML === 'App' && messages > 0){
+        title.innerHTML = `(${messages}) New messages`;
+      }
+      else{
+        title.innerHTML = 'App'
+      }
+    },2000)
+    </script>
+
+  </body>
+</html>

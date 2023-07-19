@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Arrays and Loops
+    </title>
+  </head>
+  <body>
+    <script>
+      // const myArray = [10,20,30];
+      // console.log(myArray);
+      // array = ['egg','apple','egg','egg','ham'];
+
+      
+
+      function removeEggs(array){
+        console.log(array);
+        let newArr  = array.slice;
+        newArr = array.reverse();
+        console.log(newArr);
+        let eggCount = 0;
+        
+        for(let i = 0; i<newArr.length; i++){
+          console.log(`i=${i}, ${array[i]}`)
+          if (newArr[i]==='egg'){
+            if (eggCount<2){
+              console.log(`i=${i}, ${array[i]}, ${eggCount}`)
+              newArr.splice(i,1);
+              i= i-1;
+              eggCount++;
+            }
+          }
+        }
+        
+        return newArr.reverse();
+      }
+      array = ['egg','apple','egg','egg','ham'];
+      console.log(removeEggs(array));
+
+      
+    </script>
+  </body>
+</html>

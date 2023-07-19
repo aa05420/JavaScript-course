@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercises 9a-f
+    </title>
+  </head>
+  <body>
+    <button>9a</button>
+    <button class="js-button">9b done!</button>
+
+
+    <button class="heads" onclick = "
+    document.querySelector('.js-text').innerHTML = `You chose: head`;"
+    > heads</button>
+    <button class="tails" onclick = "
+      document.querySelector('.js-text').innerHTML = `You chose: tails`;
+    ">tails</button>
+    <p class="js-text"></p>
+
+    <input class="text" placeholder="Name" onkeydown="
+    if (event.key === 'Enter'){
+     display();
+    }"
+    onkeyup = 
+    "document.querySelector('.js-display').innerHTML = document.querySelector('.text').value;
+    ">
+    
+    <button class="submit"  onclick="
+      display();
+    ">Submit</button>
+
+    <p class="js-name-display">
+    <p class="js-display"></p>
+    </p>
+    <script>
+
+      function display(){
+        val =  document.querySelector('.text').value;
+        console.log(val);
+        document.querySelector('.js-name-display').innerHTML= `your name is ${val}`;
+      }
+      /*
+      console.log(document.querySelector('button'));
+      console.log(document.querySelector('js-button'));
+      */
+    </script>
+  </body>
+</html>

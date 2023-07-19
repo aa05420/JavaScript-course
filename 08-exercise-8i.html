@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>
+      Exercise 6f
+    </title>
+  </head>
+  <body>
+    <script>
+      let guess = ''; 
+      let score = JSON.parse(localStorage.getItem('s'))||{
+        wins:0,
+        losses:0
+      };
+      function playGame(guess){
+        let randomNum = Math.random();
+        let output = randomNum<0.5? 'heads':'tail';
+        console.log(output);
+        let res = '';
+        (guess === output)? res= 'you win.': res = 'you lose!';
+       
+        
+        localStorage.setItem('s',JSON.stringify(computeScore(res)));
+        console.log(res);
+        
+        alert(`losses:${score.losses}, wins: ${score.wins}`);
+        return res;
+      }
+      
+      function computeScore(res){
+        if (res === 'you win.'){
+          score.wins = score.wins+1;
+        }
+        else{
+          score.losses =score.losses + 1;
+        }
+
+        console.log(score);
+        return score;
+      }
+    </script>
+    <button onclick = "
+        guess = 'heads';
+        playGame(guess);
+    ">heads </button>
+    <button onclick = "
+      guess = 'tails';
+      playGame(guess);
+    ">tails </button >
+  </body>
+</html>
